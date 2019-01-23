@@ -1,4 +1,4 @@
-package com.mobiquityinc.validation;
+package com.mobiquityinc.packer.validation;
 
 import java.util.function.Predicate;
 

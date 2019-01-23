@@ -1,6 +1,6 @@
-package com.mobiquityinc.validation;
+package com.mobiquityinc.packer.validation;
 
-import com.mobiquityinc.exception.APIException;
+import com.mobiquityinc.packer.exception.APIException;
 
 /**
  *
@@ -10,10 +10,11 @@ public class ValidationResult {
     private boolean valid;
     private String onErrorMessage;
 
-    private ValidationResult(boolean valid){
+    private ValidationResult(boolean valid) {
         this.valid = valid;
     }
-    private ValidationResult(boolean valid, String onErrorMessage){
+
+    private ValidationResult(boolean valid, String onErrorMessage) {
         this.valid = valid;
         this.onErrorMessage = onErrorMessage;
     }
@@ -35,6 +36,6 @@ public class ValidationResult {
     }
 
     public void throwIfInvalid(String field) {
-        throw new APIException(field+" "+onErrorMessage);
+        if (!isValid()) throw new APIException(field + " " + onErrorMessage);
     }
 }
