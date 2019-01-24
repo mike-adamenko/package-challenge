@@ -7,10 +7,13 @@ import java.math.BigDecimal;
 
 /**
  * Item.
+ * Pay attention on weght and price.
+ * They are defined as BigDecimal as it provides full control over the precision.
+ * Which is false with double and float types.
  *
  * @author Mike Adamenko (mnadamenko@gmail.com)
  */
-public class Item implements Comparable{
+public class Item implements Comparable {
     private final int id;
     private final BigDecimal weight;
     private final BigDecimal price;

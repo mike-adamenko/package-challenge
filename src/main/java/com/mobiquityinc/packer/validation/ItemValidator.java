@@ -4,9 +4,14 @@ import com.mobiquityinc.packer.domain.Item;
 
 import java.math.BigDecimal;
 
-import static com.mobiquityinc.packer.validation.ValidationHelpers.lte;
-import static com.mobiquityinc.packer.validation.ValidationHelpers.notNull;
+import static com.mobiquityinc.packer.validation.util.ValidationHelpers.lte;
+import static com.mobiquityinc.packer.validation.util.ValidationHelpers.notNull;
 
+/**
+ * Validation rules for {@link Item}
+ *
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 public class ItemValidator implements Validator<Item> {
 
     @Override

@@ -1,9 +1,11 @@
-package com.mobiquityinc.packer.validation;
+package com.mobiquityinc.packer.validation.util;
 
 import com.mobiquityinc.packer.exception.APIException;
 
 /**
+ * Represents how the validation ended.
  *
+ * @author Mike Adamenko (mnadamenko@gmail.com)
  */
 public class ValidationResult {
 
@@ -19,14 +21,6 @@ public class ValidationResult {
         this.onErrorMessage = onErrorMessage;
     }
 
-    public boolean isValid() {
-        return valid;
-    }
-
-    public String getOnErrorMessage() {
-        return onErrorMessage;
-    }
-
     public static ValidationResult ok() {
         return new ValidationResult(true);
     }
@@ -35,6 +29,19 @@ public class ValidationResult {
         return new ValidationResult(false, onErrorMessage);
     }
 
+    public boolean isValid() {
+        return valid;
+    }
+
+    public String getOnErrorMessage() {
+        return onErrorMessage;
+    }
+
+    /**
+     * Throws {@link APIException} if validation result is invalid.
+     *
+     * @param field validated field
+     */
     public void throwIfInvalid(String field) {
         if (!isValid()) throw new APIException(field + " " + onErrorMessage);
     }

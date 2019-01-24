@@ -1,9 +1,14 @@
-package com.mobiquityinc.packer.validation;
+package com.mobiquityinc.packer.validation.util;
 
 import java.math.BigDecimal;
 
 import static java.lang.String.format;
 
+/**
+ * Helper class. Defines validation methods.
+ *
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 public class ValidationHelpers {
     public static Validation notNull = SimpleValidation.from((s) -> s != null, "must not be null.");
 

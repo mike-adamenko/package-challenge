@@ -6,7 +6,9 @@ import org.junit.Test;
 import java.math.BigDecimal;
 
 /**
+ * Unit tests for {@link Item}
  *
+ * @author Mike Adamenko (mnadamenko@gmail.com)
  */
 public class ItemTest {
     @Test(expected = APIException.class)

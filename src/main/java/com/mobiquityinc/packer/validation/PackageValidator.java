@@ -4,9 +4,14 @@ import com.mobiquityinc.packer.domain.Package;
 
 import java.math.BigDecimal;
 
-import static com.mobiquityinc.packer.validation.ValidationHelpers.lte;
-import static com.mobiquityinc.packer.validation.ValidationHelpers.notNull;
+import static com.mobiquityinc.packer.validation.util.ValidationHelpers.lte;
+import static com.mobiquityinc.packer.validation.util.ValidationHelpers.notNull;
 
+/**
+ * Validation rules for {@link Package}
+ *
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 public class PackageValidator implements Validator<Package> {
 
     public void validate(Package aPackage) {

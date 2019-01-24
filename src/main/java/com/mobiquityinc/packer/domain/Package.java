@@ -8,6 +8,10 @@ import java.util.stream.Collectors;
 
 /**
  * Package.
+ * <p>
+ * Pay attention on limit.
+ * It is defined as BigDecimal as it provides full control over the precision.
+ * Which is false with double and float types.
  *
  * @author Mike Adamenko (mnadamenko@gmail.com)
  */

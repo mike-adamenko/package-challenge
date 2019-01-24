@@ -1,5 +1,11 @@
-package com.mobiquityinc.packer.validation;
+package com.mobiquityinc.packer.validation.util;
 
+/**
+ * Functional validation interface.
+ *
+ * @param <K> validation type
+ * @author Mike Adamenko (mnadamenko@gmail.com)
+ */
 @FunctionalInterface
 public interface Validation<K> {
 
