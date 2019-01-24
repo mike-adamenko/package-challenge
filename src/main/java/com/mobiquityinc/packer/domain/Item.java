@@ -11,9 +11,11 @@ import java.math.BigDecimal;
  * They are defined as BigDecimal as it provides full control over the precision.
  * Which is false with double and float types.
  *
+ * It implements {@link Comparable} to be able to implement {@link com.mobiquityinc.packer.service.SortingAssembler}
+ *
  * @author Mike Adamenko (mnadamenko@gmail.com)
  */
-public class Item implements Comparable {
+public class Item implements Comparable<Item> {
     private final int id;
     private final BigDecimal weight;
     private final BigDecimal price;
@@ -41,10 +43,15 @@ public class Item implements Comparable {
         return "(" + id + "," + weight + "," + price + ")";
     }
 
+    /**
+     * Comares 2 items first by price desc and then by weght asc
+     * @param item item to be comared
+     * @return comparing result
+     */
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Item item) {
         BigDecimal price1 = this.getPrice();
-        BigDecimal price2 = ((Item) o).getPrice();
+        BigDecimal price2 = item.getPrice();
         int sComp = price2.compareTo(price1);
 
         if (sComp != 0) {
@@ -52,7 +59,7 @@ public class Item implements Comparable {
         }
 
         BigDecimal weght1 = this.getWeight();
-        BigDecimal weght2 = ((Item) o).getWeight();
+        BigDecimal weght2 = item.getWeight();
         return weght1.compareTo(weght2);
     }
 }
